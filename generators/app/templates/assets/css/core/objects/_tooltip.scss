@@ -1,0 +1,41 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Tooltip Partial
+// DATE - July 28, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+
+
+
+@if $use-tooltip == true{
+
+	// TOOLTIP
+	a.evo-tooltip,
+	img.evo-tooltip  	{
+						border-bottom: 0;
+		&:hover,
+    	&:focus				{border-bottom: 0;}
+						}									
+
+
+	a.evo-tooltip  		{
+		&:hover				{color: $anchor-font-color-hover;}
+						}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			
+
+		}
+		
+	}// endif
+
+}//endif

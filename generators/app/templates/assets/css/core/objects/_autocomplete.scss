@@ -1,0 +1,99 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Autocomplete Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-autocomplete-border-size: 1px !default;
+$evo-autocomplete-border-style: solid !default;
+$evo-autocomplete-border-color:	$onyx-dark-30 !default;
+$evo-autocomplete-max-height: rem-calc(107) !default;
+$evo-autocomplete-max-height-medium-up: rem-calc(176) !default;
+$evo-autocomplete-item-font-color: $onyx-dark-80 !default;
+$evo-autocomplete-item-line-height: 1.5 !default;
+$evo-autocomplete-item-border-bottom-size: 1px !default;
+$evo-autocomplete-item-border-bottom-style: solid !default;
+$evo-autocomplete-item-border-bottom-color: $transparent !default;
+$evo-autocomplete-item-hover-background-color: $onyx-dark-10 !default;
+$evo-autocomplete-background-color: $onyx-dark-2 !default;
+
+
+@if $use-autocomplete == true{
+
+	.ui-helper-hidden-accessible
+							{display: none;}
+
+	// AUTOCOMPLETE
+	.ui-menu				{
+							@include border-radius(0 0 $global-radius $global-radius);
+							@include box-shadow($evo-base-shadow-horizontal, $evo-base-shadow-vertical,	$evo-base-shadow-blur, $evo-base-shadow-color);
+							background-color: $evo-autocomplete-background-color;
+							border: $evo-autocomplete-border-size $evo-autocomplete-border-style $evo-autocomplete-border-color;
+							border-top: 0;
+							display: block;
+							position: absolute;
+							z-index: $evo-base-zindex-autocomplete;
+							padding: 0;
+							margin: 0;
+							width: auto;
+							list-style: none;
+							max-height: $evo-autocomplete-max-height;
+							overflow-y: auto;
+							overflow-x: hidden;
+							outline: none;
+		.ui-menu-item			{
+								@include text-overflow;
+								margin: 0;
+								padding: rem-calc(5);
+								display: block;
+								width: 100%;
+								color: $evo-autocomplete-item-font-color;
+								line-height: $evo-autocomplete-item-line-height;
+								border-bottom: $evo-autocomplete-item-border-bottom-size $evo-autocomplete-item-border-bottom-style $evo-autocomplete-item-border-bottom-color;
+								cursor: pointer;
+			.ui-menu-secondary		{
+									@include text-overflow;
+									margin-left: rem-calc(5);
+									display: inline;
+									}
+								}
+
+		.ui-state-focus			{background-color: $evo-autocomplete-item-hover-background-color;}
+								
+		.ui-menu-item:last-child
+								{
+								border-bottom: 0;
+			.ui-state-hover,
+			.ui-state-active		{@include border-radius(0 0 $global-radius $global-radius);}
+								}
+							}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			// AUTOCOMPLETE
+			.ui-menu		{
+							max-height: $evo-autocomplete-max-height-medium-up;
+				.ui-menu-item	{
+					a				{
+						.ui-menu-secondary
+										{
+										margin-left: 0;
+										display: block;
+										}
+									}
+								}
+							}
+
+		}
+		
+	}// endif
+
+}//endif

@@ -1,0 +1,74 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Accordion Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-accordion-margin-bottom: rem-calc(10) !default;
+$evo-accordion-border-size: 1px !default;
+$evo-accordion-border-style: solid !default;
+$evo-accordion-border-color: $onyx-dark-30 !default;
+$evo-accordion-navigation-margin-bottom: rem-calc(10) !default;
+$evo-accordion-navigation-font-family: $evo-font-medium-stack !default;
+$evo-accordion-icon-font-family: $evo-icon-font-stack !default;
+$evo-accordion-icon-open-icon: '\ed5c' !default;
+$evo-accordion-icon-close-icon: '\ed5d' !default;
+$evo-accordion-icon-font-color: $accordion-navigation-font-color !default;
+
+
+@if $use-accordion == true{
+
+	// ACCORDION
+	.evo-accordion			{
+							margin-bottom: $evo-accordion-margin-bottom;
+							margin-left: 0;
+		.accordion-navigation	{
+								@include border-radius($global-radius);
+								border: $evo-accordion-border-size $evo-accordion-border-style $evo-accordion-border-color;
+								margin-bottom: $evo-accordion-navigation-margin-bottom !important;
+			a						{
+									@include border-radius($global-radius);
+									font-family: $evo-accordion-navigation-font-family;
+									text-decoration: none;
+									}
+			.content				{padding-top: 0;}
+								}
+							}
+
+	// ACCORDION WITH ICONS
+	.evo-accordion-icons	{
+		.accordion-navigation	{
+			> a:before 				{
+									font-family: $evo-accordion-icon-font-family;
+									content: $evo-accordion-icon-open-icon;
+									padding-right: rem-calc(10);
+									float: left;
+									font-size: rem-calc(16);
+									color: $evo-accordion-icon-font-color;
+									position: relative;
+									top: rem-calc(-1);
+									}
+			a[aria-expanded="true"]:before
+									{
+									content: $evo-accordion-icon-close-icon;
+									}
+								}
+							}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			
+
+		}
+		
+	}// endif
+
+}//endif

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--[if IE 9]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+	<head>
+
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title>{site_title}</title>
+		<meta name="keywords" content="{metaKeywords}" />
+		<meta name="description" content="{metaDescription}" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="cleartype" content="on" />
+		
+		<!-- Mobile touch icons - http://goo.gl/6nVq0 -->
+		<!-- For Chrome for Android: -->
+		<!-- <link rel="icon" sizes="192x192" href="touch-icon-192x192.png"> -->
+		<!-- For iPhone 6 Plus with @3× display: -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-icon-180x180-precomposed.png"> -->
+		<!-- For iPad with @2× display running iOS ≥ 7: -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152-precomposed.png"> -->
+		<!-- For iPad with @2× display running iOS ≤ 6: -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png"> -->
+		<!-- For iPhone with @2× display running iOS ≥ 7: -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png"> -->
+		<!-- For iPhone with @2× display running iOS ≤ 6: -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png"> -->
+		<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7: -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76-precomposed.png"> -->
+		<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6: -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png"> -->
+		<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+		<!-- <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png"> --><!-- 57×57px -->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!-- <meta name="msapplication-TileImage" content="apple-touch-icon-144x144-precomposed.png"> -->
+		<!-- <meta name="msapplication-TileColor" content="#002C77"> -->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<!--
+        <meta name="mobile-web-app-capable" content="yes">
+        -->
+
+		<!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+		<!--
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-title" content="" />
+		-->
+
+		<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+		<!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+    	-->
+
+		<!-- FAVICON -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+
+		<!-- EVOLUTION CORE STYLES -->
+		<link href="assets/css/evolution.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- EVOLUTION UI STYLES -->
+		<link href="assets/css/evolution_ui.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- SITE STYLES -->
+		<link href="assets/css/styles.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- SITE IE CONDITIONAL STYLES -->
+		<!--[if IE 9]><link href="assets/css/ie.min.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+		<!-- MODERNIZR - USED TO CHECK HTML & CSS3 SUPPORT IN BROWSERS -->
+		<script src="assets/scripts/core/foundation/vendor/modernizr.js"></script>
+
+	</head>
+	<body>
+
+		<!-- OFF-CANVAS WRAPPER - BEGINS -->
+		<div class="off-canvas-wrap evo-off-canvas" data-offcanvas>
+			<div class="inner-wrap">
+
+				<!-- HEADER - BEGINS -->
+				{>"templates/includes/header.html"/}
+				<!-- HEADER - ENDS -->
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row">
+				{+content} ... {/content}
+					</div>
+				</section>
+				<!-- PAGE - ENDS -->
+
+				<!-- FOOTER - BEGINS -->
+
+				{>"templates/includes/footer.html"/}
+				<!-- FOOTER - ENDS -->
+
+				<!-- OFF-CANVAS CLOSE - BEGINS -->
+				<a class="exit-off-canvas"></a>
+				<!-- OFF-CANVAS CLOSE - ENDS -->
+
+			</div>
+		</div>
+		<!-- OFF-CANVAS WRAPPER - ENDS -->
+
+		{>"templates/includes/scripts.html"/}
+
+	</body>
+</html>

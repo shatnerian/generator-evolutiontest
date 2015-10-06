@@ -1,0 +1,45 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Core SASS Settings Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+// ==========================================================================================
+// DEFAULT CORE SASS SETTINGS
+// ==========================================================================================
+
+// These are the default Mercer Evolution core SASS settings. This is what will be turned on/off
+// from Mercer Evolution and included in the evolution library CSS file. These settings can be
+// modified on a project by project basis to customize an evolution CSS file for your project
+// based on what components you will need from Mercer Evolution.
+
+// GLOBAL SETTINGS
+// ------------------------------------------------------------------------------------------
+
+// RESPONSIVE SETTINGS
+
+// MEDIA QUERY RANGES AND UP
+$use-small-up-mediaquery:					true !default; // 0px +
+$use-medium-up-mediaquery:					true !default; // 768px +
+$use-large-up-mediaquery:					true !default; // 1025px +
+$use-xlarge-up-mediaquery:					true !default; // 1441px +
+$use-xxlarge-up-mediaquery:					true !default; // 1921px +
+
+// MEDIA QUERY RANGES
+$use-small-only-mediaquery:					true !default; // 0px - 767px
+$use-medium-only-mediaquery:				true !default; // 768px - 1024px
+$use-large-only-mediaquery:					true !default; // 1025px - 1440px
+$use-xlarge-only-mediaquery:				true !default; // 1441px - 1920px
+$use-xxlarge-only-mediaquery:				true !default; // 1921px +
+
+// BASE SETTINGS
+// ------------------------------------------------------------------------------------------
+$use-boxes:									true !default;
+$use-buttons:								true !default;
+$use-dropdowns:								true !default;
+$use-grid:									true !default;
+$use-forms:									true !default;
+$use-icons:									true !default;
+$use-lists:									true !default;
+$use-tables:								true !default;
+$use-type:									true !default;

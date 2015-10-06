@@ -1,0 +1,62 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Tabs Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-tabs-border-radius: $global-radius !default;
+$evo-tabs-panel-padding: $evo-base-padding !default;
+$evo-tabs-panel-border-width: 1px !default;
+$evo-tabs-panel-border-style: solid !default;
+$evo-tabs-panel-border-color: $onyx-dark-30 !default;
+
+
+@if $use-tabs == true {
+
+	// BASIC TABS
+	.evo-tabs						{
+		li.tab-title					{
+										margin-right: rem-calc(3);
+			&:last-child					{margin-right: 0;}
+			a								{
+											@include border-radius($evo-tabs-border-radius $evo-tabs-border-radius 0 0);
+											border: $evo-tabs-panel-border-width $evo-tabs-panel-border-style $evo-tabs-panel-border-color;
+											border-bottom: 0;
+											text-decoration: none;
+				&:hover							{@include transition(background-color 0.3s ease-in-out);}
+											}
+										}
+		li.active						{
+			a								{
+											@include transition(background-color 0.5s ease-in-out);
+											position: relative;
+											top: 1px;
+											}
+										}
+									}
+
+	// BASIC TABS CONTENT
+	.evo-tabs-content				{
+									@include border-radius(0 $evo-tabs-border-radius $evo-tabs-border-radius $evo-tabs-border-radius);
+									border: $evo-tabs-panel-border-width $evo-tabs-panel-border-style $evo-tabs-panel-border-color;
+		>.content						{padding: $evo-tabs-panel-padding $evo-tabs-panel-padding 0 $evo-tabs-panel-padding;}
+									}
+
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			
+
+		}
+		
+	}// endif
+
+}//endif

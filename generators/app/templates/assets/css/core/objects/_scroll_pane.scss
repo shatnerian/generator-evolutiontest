@@ -1,0 +1,372 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Scroll Pane Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-scroll-pane-width: auto !default;
+$evo-scroll-pane-height: rem-calc(300) !default;
+$evo-scroll-pane-scrollbar-color: $black !default;
+
+
+@if $use-scrollpane == true{
+
+	// SCROLL PANE
+
+	// Default Scroll Pane when there is no JS
+	.evo-scroll-pane			{
+								position: relative;
+								width: $evo-scroll-pane-width;
+								height: $evo-scroll-pane-height;
+								padding-right: rem-calc(20);
+								overflow: auto;
+								-ms-overflow-style: -ms-autohiding-scrollbar;
+								-webkit-overflow-scrolling: touch;
+								}
+
+	// Disabled Scroll Pane
+	.evo-scroll-pane-disabled	{
+								height: 100%;
+								overflow: none;
+								}
+
+
+	// SCROLL PANE BASE
+	.mCustomScrollbar			{
+								padding: 0;
+								-ms-touch-action: none;
+								touch-action: none; /* MSPointer events - direct all pointer events to js */
+								}
+	.mCustomScrollbar.mCS_no_scrollbar
+								{
+								-ms-touch-action: auto;
+								touch-action: auto;
+								}
+	
+	.mCustomScrollBox			{
+								position: relative;
+								overflow: hidden;
+								height: 100%;
+								max-width: 100%;
+								outline: none;
+								direction: ltr;
+								}
+
+	.mCSB_container				{
+								overflow: hidden;
+								width: auto;
+								max-width: $row-width;
+								height: auto;
+								}
+
+	// VERTICAL SCROLLBAR SETUP
+	.mCSB_inside > .mCSB_container
+								{margin-right: rem-calc(16);}
+
+	.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden
+								{margin-right: rem-calc(16);}
+	
+	.mCS-dir-rtl > .mCSB_inside > .mCSB_container
+								{
+								margin-right: 0;
+								margin-left: rem-calc(16);
+								}
+	
+	.mCS-dir-rtl > .mCSB_inside > .mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden
+								{margin-left: rem-calc(16);}
+
+	.mCSB_scrollTools			{
+								position: absolute;
+								width: rem-calc(16);
+								height: auto;
+								left: auto;
+								top: 0;
+								right: 0;
+								bottom: 0;
+								}
+
+	.mCSB_outside + .mCSB_scrollTools
+								{right: -26px;}
+	
+	.mCS-dir-rtl > .mCSB_inside > .mCSB_scrollTools, 
+	.mCS-dir-rtl > .mCSB_outside + .mCSB_scrollTools
+								{
+								right: auto;
+								left: 0;
+								}
+	
+	.mCS-dir-rtl > .mCSB_outside + .mCSB_scrollTools
+								{left: -26px;}
+
+	.mCSB_scrollTools			{ 
+		.mCSB_draggerContainer		{
+									position: absolute;
+									top: 0;
+									left: 0;
+									bottom: 0;
+									right: 0; 
+									height: auto;
+									}
+		a + .mCSB_draggerContainer	{margin: rem-calc(20) 0;}
+		.mCSB_draggerRail			{
+									@include border-radius(rem-calc(16));
+									display: none;
+									width: rem-calc(2);
+									height: 100%;
+									margin: 0 auto;
+									}
+		.mCSB_dragger				{
+									cursor: pointer;
+									width: 100%;
+									height: rem-calc(30);
+									z-index: 1;
+			.mCSB_dragger_bar			{
+										@include border-radius(rem-calc(16));
+										position: relative;
+										width: rem-calc(4);
+										height: 100%;
+										margin: 0 auto;
+										text-align: center;
+										}
+									}
+								}
+	
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, 
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar
+								{width: rem-calc(12);}
+	
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail
+								{width: rem-calc(8);}
+
+
+	// HORIZONTAL SCROLLBAR SETUP
+	.mCSB_horizontal.mCSB_inside > .mCSB_container
+								{
+								margin-right: 0;
+								margin-bottom: rem-calc(16);
+								}
+
+	.mCSB_horizontal.mCSB_outside > .mCSB_container
+								{min-height: 100%;}
+
+	.mCSB_horizontal > .mCSB_container.mCS_no_scrollbar_x.mCS_x_hidden
+								{margin-bottom: rem-calc(16);}
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal
+								{
+								width: auto;
+								height: rem-calc(16);
+								top: auto;
+								right: 0;
+								bottom: 0;
+								left: 0;
+								}
+
+	.mCustomScrollBox + .mCSB_scrollTools.mCSB_scrollTools_horizontal,
+	.mCustomScrollBox + .mCSB_scrollTools + .mCSB_scrollTools.mCSB_scrollTools_horizontal
+								{bottom: -26px;}
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal
+								{
+		a + .mCSB_draggerContainer	{margin: 0 rem-calc(20);}
+		.mCSB_draggerRail			{
+									width: 100%;
+									height: rem-calc(2);
+									margin: rem-calc(7) 0;
+									}
+		.mCSB_dragger				{
+									width: rem-calc(30);
+									height: 100%;
+									left: 0;
+			.mCSB_dragger_bar			{
+										width: 100%;
+										height: rem-calc(4);
+										margin: rem-calc(6) auto;
+										}
+									}
+								}
+
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, 
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar
+								{
+								height: rem-calc(12);
+								margin: rem-calc(2) auto;
+								}
+
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail
+								{
+								height: rem-calc(8);
+								margin: rem-calc(4) 0;
+								}
+
+	// VERTICAL AND HORIZONTAL SCROLLBARS SETUP
+	.mCSB_container_wrapper		{
+								position: absolute;
+								height: auto;
+								width: auto;
+								overflow: hidden;
+								top: 0;
+								left: 0;
+								right: 0;
+								bottom: 0;
+								margin-right: rem-calc(16);
+								margin-bottom: rem-calc(16);
+		> .mCSB_container			{
+									padding-right: rem-calc(16);
+									padding-bottom: rem-calc(16);
+									}
+								}
+
+	.mCSB_vertical_horizontal	{
+		> .mCSB_scrollTools.mCSB_scrollTools_vertical
+									{bottom: 20px;}
+		> .mCSB_scrollTools.mCSB_scrollTools_horizontal
+									{right: 20px;}
+								}
+
+	/* non-visible horizontal scrollbar */
+	.mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden
+								{
+		+ .mCSB_scrollTools.mCSB_scrollTools_vertical
+									{bottom: 0;}
+								}
+
+	/* non-visible vertical scrollbar/RTL direction/left-side scrollbar */
+	.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden + .mCSB_scrollTools ~ .mCSB_scrollTools.mCSB_scrollTools_horizontal, 
+	.mCS-dir-rtl > .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_scrollTools.mCSB_scrollTools_horizontal
+								{right: 0;}
+
+	/* RTL direction/left-side scrollbar */
+	.mCS-dir-rtl > .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_scrollTools.mCSB_scrollTools_horizontal
+								{left: 20px;}
+
+	/* non-visible scrollbar/RTL direction/left-side scrollbar */
+	.mCS-dir-rtl > .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden + .mCSB_scrollTools ~ .mCSB_scrollTools.mCSB_scrollTools_horizontal
+								{left: 0;}
+
+	.mCS-dir-rtl > .mCSB_inside > .mCSB_container_wrapper
+								{
+								margin-right: 0;
+								margin-left: rem-calc(16);
+								}
+
+	.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden > .mCSB_container
+								{
+								@include box-sizing(border-box);
+								padding-right: 0;
+								}
+
+	.mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden > .mCSB_container
+								{
+								@include box-sizing(border-box);
+								padding-bottom: 0;
+								}
+
+	.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden
+								{
+								margin-right: rem-calc(16);
+								margin-left: 0;
+								}
+
+	.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden
+								{margin-bottom: rem-calc(16);}
+
+
+	// SCROLL BAR TRANSITIONS 
+	.mCSB_scrollTools, 
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+								{
+								-webkit-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+								-moz-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+								-o-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+								transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+								}
+
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail, 
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar, 
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail
+								{
+								-webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s, 
+											margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, 
+											margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+											opacity .2s ease-in-out, background-color .2s ease-in-out; 
+								-moz-transition: width .2s ease-out .2s, height .2s ease-out .2s, 
+											margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, 
+											margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+											opacity .2s ease-in-out, background-color .2s ease-in-out; 
+								-o-transition: width .2s ease-out .2s, height .2s ease-out .2s, 
+											margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, 
+											margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+											opacity .2s ease-in-out, background-color .2s ease-in-out; 
+								transition: width .2s ease-out .2s, height .2s ease-out .2s, 
+											margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, 
+											margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+											opacity .2s ease-in-out, background-color .2s ease-in-out; 
+								}
+
+	// SCROLL BAR THEME
+	.mCSB_scrollTools			{
+								opacity: 0.75;
+								}
+
+	.mCS-autoHide 				{
+		> .mCustomScrollBox			{
+			> .mCSB_scrollTools,
+			~ .mCSB_scrollTools			{
+										opacity: 0;
+										}
+									}
+								}
+
+	.mCustomScrollbar > .mCustomScrollBox > .mCSB_scrollTools.mCSB_scrollTools_onDrag,
+	.mCustomScrollbar > .mCustomScrollBox ~ .mCSB_scrollTools.mCSB_scrollTools_onDrag,
+	.mCustomScrollBox:hover > .mCSB_scrollTools,
+	.mCustomScrollBox:hover ~ .mCSB_scrollTools,
+	.mCS-autoHide:hover > .mCustomScrollBox > .mCSB_scrollTools,
+	.mCS-autoHide:hover > .mCustomScrollBox ~ .mCSB_scrollTools
+								{
+								opacity: 1;
+								}
+
+	.mCS-dark.mCSB_scrollTools	{
+		.mCSB_draggerRail			{
+									background-color: rgba($evo-scroll-pane-scrollbar-color,0.15);
+									}
+		.mCSB_dragger				{
+			.mCSB_dragger_bar			{
+										background-color: rgba($evo-scroll-pane-scrollbar-color,0.30);
+										}
+			&:hover						{
+				.mCSB_dragger_bar			{
+											background-color: rgba($evo-scroll-pane-scrollbar-color,0.40);
+											}
+										}
+			&:active,
+			&.mCSB_dragger_onDrag		{
+				.mCSB_dragger_bar			{
+											background-color: rgba($evo-scroll-pane-scrollbar-color,0.40);
+											}
+										}
+									}
+								}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			
+
+		}
+		
+	}// endif
+
+}//endif

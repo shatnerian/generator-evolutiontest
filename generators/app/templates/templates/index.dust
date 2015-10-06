@@ -1,0 +1,28 @@
+{>"templates/layouts/layout.html"/}
+{site_title}
+{<content}
+
+	<div class="small-12 columns">
+
+		<h1>{#title}{index}{/title}</h1>
+		
+		<h4>Section Title</h4>
+		<ul>
+			<li><a href="/home">Home</a></li>
+			<li><a href="/template">Template</a></li>
+		</ul>
+
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+
+	</div>
+	
+{/content}

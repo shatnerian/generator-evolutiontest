@@ -1,0 +1,84 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Global Variables Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+// ==========================================================================================
+// EVO CORE - GLOBAL
+// ==========================================================================================
+
+// BASE VARIABLES
+
+	// LAYOUT
+	$evo-base-margin:							rem-calc(14) !default;
+	$evo-base-padding:							rem-calc(14) !default;
+
+	// SHADOWS
+	$evo-base-shadow-base-color: 				$black !default;
+	$evo-base-shadow-horizontal: 				0 !default;
+	$evo-base-shadow-vertical: 				 	rem-calc(3) !default;
+	$evo-base-shadow-blur: 				 		rem-calc(3) !default;
+	$evo-base-shadow-color:						scale-color($evo-base-shadow-base-color, $lightness: 75%) !default;
+
+// Z-INDEX MASTER LIST
+// Used for a bird's eye view of components dependent on the z-axis
+$evo-base-zindex-slider:					10 !default;
+$evo-base-zindex-slider-handle:				11 !default;
+$evo-base-zindex-datepicker:				9000 !default;
+$evo-base-zindex-autocomplete:				9001 !default;
+
+
+// TYPOGRAPHY
+// ------------------------------------------------------------------------------------------
+
+// BASE FONTS
+$evo-base-font-stack:						arial, Tahoma, Geneva, sans-serif !default;
+$evo-base-font-file-path:					"../fonts" !default;
+
+// WEB FONTS
+
+	// Thin
+	$evo-font-thin-family:						proxima_nova_ththin !default;
+	$evo-font-thin-file-path:					"#{$evo-base-font-file-path}/ProximaNova-Thin-webfont" !default;
+	$evo-font-thin-stack:						"#{$evo-font-thin-family}", $evo-base-font-stack !default;
+
+	// Regular
+	$evo-font-regular-family:					proxima_nova_rgregular !default;
+	$evo-font-regular-file-path:				"#{$evo-base-font-file-path}/ProximaNova-Reg-webfont" !default;
+	$evo-font-regular-stack:					"#{$evo-font-regular-family}", $evo-base-font-stack !default;
+
+	// Italic
+	$evo-font-italic-family:					proxima_novaregular_italic !default;
+	$evo-font-italic-file-path:					"#{$evo-base-font-file-path}/ProximaNova-RegIt-webfont" !default;
+	$evo-font-italic-stack:						"#{$evo-font-italic-family}", $evo-base-font-stack !default;
+
+	// Medium
+	$evo-font-medium-family:					proxima_nova_ltsemibold !default;
+	$evo-font-medium-file-path:					"#{$evo-base-font-file-path}/ProximaNova-Sbold-webfont" !default;
+	$evo-font-medium-stack:						"#{$evo-font-medium-family}", $evo-base-font-stack !default;
+
+	// Bold
+	$evo-font-bold-family:						proxima_nova_rgbold !default;
+	$evo-font-bold-file-path:					"#{$evo-base-font-file-path}/ProximaNova-Bold-webfont" !default;
+	$evo-font-bold-stack:						"#{$evo-font-bold-family}", $evo-base-font-stack !default;
+
+	// Bold Italic
+	$evo-font-bold-italic-family:				proxima_novabold_italic !default;
+	$evo-font-bold-italic-file-path:			"#{$evo-base-font-file-path}/ProximaNova-BoldIt-webfont" !default;
+	$evo-font-bold-italic-stack:				"#{$evo-font-bold-italic-family}", $evo-base-font-stack !default;
+
+// ICON FONTS
+
+	// Core icon font set
+	$evo-icon-font-family:						evo_icon_font !default;
+	$evo-icon-font-file-path:					"#{$evo-base-font-file-path}/evo-icon-font" !default;
+	$evo-icon-font-stack:						"#{$evo-icon-font-family}" !default;
+
+	// Site icon font set
+	$evo-icon-site-font-family:					evo_icon_font_site !default;
+	$evo-icon-site-font-file-path:				"#{$evo-base-font-file-path}/evo-icon-font-site" !default;
+	$evo-icon-site-font-stack:					"#{$evo-icon-site-font-family}" !default;
+
+// LINKS
+$evo-anchor-font-color-visited: 			$sapphire-medium !default;

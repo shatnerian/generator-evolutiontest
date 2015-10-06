@@ -1,0 +1,179 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Base Form Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-form-label-font-family: $evo-font-medium-stack !default;
+$evo-form-input-border-radius: $global-radius !default;
+$evo-form-input-margin-top: rem-calc(3) !default;
+$evo-form-input-hover-border-color: $onyx-dark-14 !default;
+$evo-form-input-hover-background-color: $white !default;
+$evo-form-input-radio-checkbox-margin-bottom: rem-calc(18) !default;
+$evo-form-input-radio-checkbox-label-font-family: $font-family-sans-serif !default;
+$evo-form-placholder-font-color: $onyx-dark-10 !default;
+$evo-form-input-error-font-color: $alert-color !default;
+$evo-form-input-error-border-color: $alert-color !default;
+$evo-form-input-error-radio-checkbox-label-font-color: $body-font-color !default;
+
+
+@if $use-forms == true{
+
+	form											{
+		
+		// FORM BUTTONS
+		.button											{
+			@media #{$small-up}								{margin-top: rem-calc(3);}
+			@media #{$medium-up}							{margin-top: rem-calc(8);}
+			@media #{$large-up}								{margin-top: rem-calc(13);}
+														}
+
+		// FORM HELP TEXT
+		.evo-form-help									{
+			input[type="text"],
+			input[type="text"][readonly],
+			input[type="password"],
+			input[type="datetime"],
+			input[type="datetime-local"],
+			input[type="date"],
+			input[type="month"],
+			input[type="time"],
+			input[type="week"],
+			input[type="number"],
+			input[type="email"],
+			input[type="url"],
+			input[type="search"],
+			input[type="tel"],
+			input[type="color"],
+			select,
+			textarea,
+			input[type="radio"],
+			input[type="checkbox"]							{
+															margin-bottom: 0;
+															}
+			.evo-form-help-text								{
+															display: block;
+															padding: $input-error-message-padding;
+															margin-top: $input-error-message-top;
+															margin-bottom: $form-spacing;
+															font-size: $small-font-size !important;
+															color: $small-font-color;
+															}
+			&.error											{
+				.evo-form-help-text								{display: none;}
+															}
+														}
+													}
+
+	// FORM LABELS
+	label											{
+													font-family: $evo-form-label-font-family;
+		[class*="evo-icon"]								{
+														top: rem-calc(2);
+														}
+													}
+
+	// FORM ELEMENTS
+	input[type="text"],
+	input[type="text"][readonly],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"],
+	select,
+	textarea										{
+													border-radius: $evo-form-input-border-radius !important;
+													-webkit-border-radius: $evo-form-input-border-radius !important;
+													margin-top: $evo-form-input-margin-top !important;
+		&:hover											{
+														background-color: $evo-form-input-hover-background-color;
+														border-color: $evo-form-input-hover-border-color;
+														border-bottom-style: solid;
+														}
+		&:focus											{outline: 0;}
+													}
+
+	// RADIO BUTTONS AND CHECKBOXES
+	input[type="radio"],
+	input[type="checkbox"]							{
+													margin-bottom: $evo-form-input-radio-checkbox-margin-bottom;
+													position: relative;
+													}
+	input[type="checkbox"]							{top: rem-calc(-0.6);}
+	input[type="radio"] + label,
+	input[type="checkbox"] + label					{font-family: $evo-form-input-radio-checkbox-label-font-family;}
+
+	// HIDDEN INPUTS
+	input[type="hidden"]							{display: none;}
+
+	// PLACEHOLDERS
+	
+	// Webkit
+	::-webkit-input-placeholder						{
+													color: $evo-form-placholder-font-color;
+													}
+
+	// Firefox 4-18
+	:-moz-placeholder								{
+													color: $evo-form-placholder-font-color;
+													}
+
+	// Firefox 19+
+	::-moz-placeholder								{
+													color: $evo-form-placholder-font-color;
+													}
+
+	// IE10+
+	:-ms-input-placeholder							{
+													color: $evo-form-placholder-font-color !important;
+													}
+	
+	// IE9
+	.placeholder									{
+													color: $evo-form-placholder-font-color !important;
+													}
+
+	// ABIDE VALIDATION
+	[data-abide]									{
+		.error											{
+			label											{color: $evo-form-input-error-font-color;}
+			input,
+			select,
+			textarea										{border-color: $evo-form-input-error-border-color;}
+			input + label									{color: $evo-form-input-error-radio-checkbox-label-font-color;}
+														}
+													}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// REMOVE ZOOM OF FORMS ELEMENTS ON IOS DEVICES
+	@media screen and (-webkit-min-device-pixel-ratio:0) { 
+		select:focus,
+		textarea:focus,
+		input:focus 								{font-size: rem-calc(16);}
+	}
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			
+
+		}
+		
+	}// endif
+
+}//endif

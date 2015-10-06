@@ -1,0 +1,43 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Dropdown Buttons Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-dropdown-button-icon-font-family: $evo-icon-font-stack !default;
+$evo-dropdown-button-icon-size: rem-calc(16) !default;
+$evo-dropdown-button-icon: '\edc6' !default;
+
+
+@if $use-dropdown-buttons == true{
+
+	// DROPDOWN BUTTONS
+	.evo-dropdown-button
+					{
+		&:after			{
+						border: 0 !important;
+						font-size: $evo-dropdown-button-icon-size;
+						height: $evo-dropdown-button-icon-size !important;
+						width: $evo-dropdown-button-icon-size !important;
+						font-family: $evo-dropdown-button-icon-font-family;
+						content: $evo-dropdown-button-icon !important;
+						}
+					}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			
+
+		}
+		
+	}// endif
+
+}//endif

@@ -1,0 +1,58 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Alert Box Partial
+// DATE - July 26, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-alert-box-bgcolor: $onyx-dark-10 !default;
+$evo-alert-box-font-color: $onyx-dark-80 !default;
+$evo-alert-warning-icon-color: $topaz-dark !default;
+$evo-alert-success-icon-color: $emerald-dark !default;
+$evo-alert-alert-icon-color: $garnet-dark !default;
+$evo-alert-info-icon-color: $sapphire-dark !default;
+
+
+@if $use-alert-boxes == true{
+	
+	.evo-alert-box				{
+								background-color: $evo-alert-box-bgcolor;
+		[class*="evo-icon-"]		{color: $evo-alert-box-font-color;}
+		[class*="evo-icon-position-"]
+									{top: rem-calc(2.5);}
+								}
+
+	.warning					{
+		[class*="evo-icon-"]		{color: $evo-alert-warning-icon-color;}
+								}
+
+	.success					{
+								color: $white !important;
+		[class*="evo-icon-"]		{color: $evo-alert-success-icon-color;}
+								}
+
+	.alert						{
+								color: $white !important;
+		[class*="evo-icon-"]		{color: $evo-alert-alert-icon-color;}
+								}
+
+	.info						{
+		[class*="evo-icon-"]		{color: $evo-alert-info-icon-color;}
+								}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			
+
+		}
+		
+	}// endif
+
+}//endif

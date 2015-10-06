@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------------------------------------
+Project Name - Site CSS
+DATE - 
+AUTHOR - 
+--------------------------------------------------------------------------------------------*/
+
+// ===========================================================================================
+// CORE SASS IMPORTS
+// ===========================================================================================
+
+@import	"core/global/color_variables",
+		"core/foundation/foundation/settings",
+		"core/global/variables",
+		"core/global/functions",
+		"core/global/mixins";
+
+// ===========================================================================================
+// SITE IMPORTS
+// ===========================================================================================
+
+@import	"partials/global/settings",
+		"partials/global/variables",
+		"partials/global/functions",
+		"partials/base/icons";
+
+/*=== WEBSITE STYLES =======================================================================*/
+
+/*--- SITE GLOBAL --------------------------------------------------------------------------*/
+
+
+
+/*--- STYLES SECTION HEADER ----------------------------------------------------------------*/
+
+
+
+/*=== MEDIA QUERIES ========================================================================*/
+@import	"partials/global/responsive_small",
+		"partials/global/responsive_medium",
+		"partials/global/responsive_large",
+		"partials/global/responsive_xlarge",
+		"partials/global/responsive_xxlarge"
+		;

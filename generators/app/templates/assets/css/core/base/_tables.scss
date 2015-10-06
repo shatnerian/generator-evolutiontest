@@ -1,0 +1,71 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Base Tables Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-table-border-size: $table-border-size !default;
+$evo-table-border-style: $table-border-style !default;
+$evo-table-border-color: $table-border-color !default;
+$evo-table-head-border-color: $table-border-color !default;
+$evo-table-head-font-family: $font-family-sans-serif !default;
+$evo-table-row-hover-color: $onyx-dark-10 !default;
+
+
+@if $use-tables == true{
+
+	// TABLE HORIZONTAL SCROLL CONTAINER FOR SMALL MEDIA QUERY
+	.evo-table-small-mediaquery
+						{
+						overflow-x: auto;
+						overflow-y: hidden;
+						-ms-overflow-style: -ms-autohiding-scrollbar;
+						-webkit-overflow-scrolling: touch;
+						}
+
+	// TABLE BASE
+	.evo-table			{
+						min-width: ($small-breakpoint  + em-calc(1));
+		th					{
+							border: $evo-table-border-size $evo-table-border-style $evo-table-head-border-color;
+							border-left: 0;
+							font-family: $evo-table-head-font-family !important;
+							font-weight: normal;
+							vertical-align: bottom;
+			&:first-child		{border-left: $evo-table-border-size $evo-table-border-style $evo-table-head-border-color;}
+							}
+		td					{border: $evo-table-border-size $evo-table-border-style $evo-table-border-color;}
+						}
+
+	// TABLE ROW HOVER
+	.evo-table-hover tbody tr:hover > td
+						{background-color: $evo-table-row-hover-color;}
+
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			// TABLE HORIZONTAL SCROLL CONTAINER FOR SMALL MEDIA QUERY, TURNED OFF FOR MEDIUM AND UP
+			.evo-table-small-mediaquery
+						{
+						overflow: hidden;
+						width: 100%;
+						}
+
+			.evo-table	{
+						min-width: 100%;
+						width: 100%;
+						}
+
+		}
+		
+	}// endif
+
+}//endif

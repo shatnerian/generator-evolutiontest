@@ -1,0 +1,32 @@
+{>"templates/layouts/layout.html"/}
+{site_title}
+{<content}
+
+	<div class="small-12 columns">
+
+		<h1>{#title}{template}{/title}</h1>
+		
+		<div class="row">
+			<div class="medium-8 columns">
+
+				<p>This boilerplate template is for general pages.</p>
+
+				<p>{lorem_ipsum}</p>
+				<p>{lorem_ipsum}</p>
+				<p>{lorem_ipsum}</p>
+				<p>{lorem_ipsum}</p>
+				<p>{lorem_ipsum}</p>
+
+			</div>
+			<div class="medium-4 columns">
+
+				<p>{lorem_ipsum}</p>
+				<p>{lorem_ipsum}</p>
+				<p>{lorem_ipsum}</p>
+
+			</div>
+		</div>
+
+	</div>
+
+{/content}

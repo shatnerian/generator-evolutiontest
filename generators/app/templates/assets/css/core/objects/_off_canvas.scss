@@ -1,0 +1,229 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Off-canvas Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @notes
+//
+
+// Off-canvas is for small and medium media queries only, hence no desktop styles for large and up media queries
+// On large and up media queries, off-canvas menu and mobile header component are replaced by top bar
+
+
+//
+// @variables
+//
+$evo-off-canvas-tab-bar-menu-icon-color: $tabbar-menu-icon-color !default;
+$evo-off-canvas-tab-bar-menu-icon-position-top: 6px !default;
+$evo-off-canvas-tab-bar-menu-icon-position-left: 7px !default;
+$evo-off-canvas-tab-bar-menu-icon-hover-color: $tabbar-menu-icon-hover !default;
+$evo-off-canvas-tab-bar-header-font-family: $font-family-sans-serif !default;
+$evo-off-canvas-tab-bar-header-letter-spacing: rem-calc(3) !default;
+$evo-off-canvas-tab-bar-header-anchor-color: $tabbar-header-color !default;
+$evo-off-canvas-tab-bar-header-image-margin: rem-calc(-3 0 0 0) !default;
+$evo-off-canvas-menu-label-font-family: $font-family-sans-serif !default;
+$evo-off-canvas-menu-label-letter-spacing: rem-calc(3) !default;
+$evo-off-canvas-menu-anchor-font-size: rem-calc(14) !default;
+$evo-off-canvas-menu-anchor-line-height: 1.5 !default;
+$evo-off-canvas-menu-anchor-letter-spacing: rem-calc(3) !default;
+$evo-off-canvas-menu-anchor-text-transform: uppercase !default;
+$evo-off-canvas-menu-anchor-icon-font-family: $evo-icon-font-stack !default;
+$evo-off-canvas-menu-anchor-icon-font-size: rem-calc(16) !default;
+$evo-off-canvas-menu-anchor-icon-position-top: 2px !default;
+$evo-off-canvas-menu-back-padding-top: rem-calc(9) !default;
+$evo-off-canvas-menu-back-padding-bottom: rem-calc(12) !default;
+$evo-off-canvas-menu-back-icon-font-family: $evo-icon-font-stack !default;
+$evo-off-canvas-menu-back-icon-position-top: 2px !default;
+$evo-off-canvas-menu-left-anchor-padding-right: rem-calc(40) !default;
+$evo-off-canvas-menu-left-has-submenu-anchor-padding-right: rem-calc(14) !default;
+$evo-off-canvas-menu-left-has-submenu-icon: '\edc5' !default;
+$evo-off-canvas-menu-left-has-submenu-icon-position-top: -2px !default;
+$evo-off-canvas-menu-left-has-submenu-icon-margin-left: rem-calc(5) !default;
+$evo-off-canvas-menu-left-back-anchor-padding-left: rem-calc(19) !default;
+$evo-off-canvas-menu-left-back-icon: '\edc7' !default;
+$evo-off-canvas-menu-left-back-icon-margin-right: 0 !default;
+$evo-off-canvas-menu-right-has-submenu-anchor-line-height: 1.25 !default;
+$evo-off-canvas-menu-right-has-submenu-icon: '\edc7' !default;
+$evo-off-canvas-menu-right-has-submenu-icon-margin-right: rem-calc(5) !default;
+$evo-off-canvas-menu-right-back-icon: '\edc5' !default;
+$evo-off-canvas-menu-right-back-icon-margin-left: 0 !default;
+
+
+@if $use-off-canvas == true{
+
+	// OFF-CANVAS
+	.evo-off-canvas					{
+
+		// TAB BAR
+		.tab-bar						{
+			.menu-icon						{
+				[class*="evo-icon-"]			{
+												color: $evo-off-canvas-tab-bar-menu-icon-color;
+												top: $evo-off-canvas-tab-bar-menu-icon-position-top;
+												left: $evo-off-canvas-tab-bar-menu-icon-position-left;
+												}
+				&:hover							{
+					[class*="evo-icon-"]			{color: $evo-off-canvas-tab-bar-menu-icon-hover-color;}
+												}
+											}
+			.tab-bar-section				{
+				h1								{
+												font-family: $evo-off-canvas-tab-bar-header-font-family !important;
+												letter-spacing: $evo-off-canvas-tab-bar-header-letter-spacing;
+												}
+				a								{
+												display: block;
+												color: $evo-off-canvas-tab-bar-header-anchor-color;
+												text-decoration: none;
+												}
+				img								{margin: $evo-off-canvas-tab-bar-header-image-margin;}
+											}
+										}
+
+		// OFF-CANVAS MENUS
+		.left-off-canvas-menu,
+		.right-off-canvas-menu			{
+
+			ul.off-canvas-list				{
+				li								{
+					label							{
+													@include box-sizing(border-box);
+													font-family: $evo-off-canvas-menu-label-font-family;
+													letter-spacing: $evo-off-canvas-menu-label-letter-spacing;
+													}
+					a								{
+													@include box-sizing(border-box);
+													display: block;
+													font-size: $evo-off-canvas-menu-anchor-font-size;
+													line-height: $evo-off-canvas-menu-anchor-line-height;
+													letter-spacing: $evo-off-canvas-menu-anchor-letter-spacing;
+													text-transform: $evo-off-canvas-menu-anchor-text-transform;
+													text-decoration: none;
+													}
+												}
+				li.has-submenu					{
+					> a:before,
+					> a:after						{
+													font-family: $evo-off-canvas-menu-anchor-icon-font-family;
+													font-size: $evo-off-canvas-menu-anchor-icon-font-size;
+													position: relative;
+													top: $evo-off-canvas-menu-anchor-icon-position-top;
+													}
+												}
+											}
+
+										}
+		
+		// OFF-CANVAS SUB MENUS
+		.left-submenu,
+		.right-submenu					{
+			.back							{
+				> a								{
+												padding-top: $evo-off-canvas-menu-back-padding-top;
+												padding-bottom: $evo-off-canvas-menu-back-padding-bottom;
+					&:before,
+					&:after							{
+													font-family: $evo-off-canvas-menu-back-icon-font-family;
+													font-size: $evo-off-canvas-menu-anchor-icon-font-size;
+													position: relative;
+													top: $evo-off-canvas-menu-back-icon-position-top;
+													}
+												}
+											}
+										}
+		
+		// LEFT OFF-CANVAS MENU
+		.left-off-canvas-menu			{
+			ul.off-canvas-list				{
+				li								{
+					a								{
+													padding-right: $evo-off-canvas-menu-left-anchor-padding-right;
+													}
+												}
+				li.has-submenu					{
+					> a								{
+													padding-right: $evo-off-canvas-menu-left-has-submenu-anchor-padding-right;
+						&:after							{
+														content: $evo-off-canvas-menu-left-has-submenu-icon;
+														float: right;
+														top: $evo-off-canvas-menu-left-has-submenu-icon-position-top;
+														margin-left: $evo-off-canvas-menu-left-has-submenu-icon-margin-left;
+														}
+													}
+												}
+											}
+										}
+
+		// LEFT OFF-CANVAS SUB MENU
+		.left-submenu					{
+			.back							{
+				> a								{
+												padding-left: $evo-off-canvas-menu-left-back-anchor-padding-left;
+					&:before						{
+													content: $evo-off-canvas-menu-left-back-icon;
+													margin-right: $evo-off-canvas-menu-left-back-icon-margin-right;
+													}
+												}
+											}
+										}
+
+		// RIGHT OFF-CANVAS MENU
+		.right-off-canvas-menu			{
+			ul.off-canvas-list				{
+				li.has-submenu					{
+					> a								{
+													line-height: $evo-off-canvas-menu-right-has-submenu-anchor-line-height;
+						&:before						{
+														content: $evo-off-canvas-menu-right-has-submenu-icon;
+														margin-right: $evo-off-canvas-menu-right-has-submenu-icon-margin-right;
+														}
+													}
+												}
+											}
+										}
+
+		// RIGHT OFF-CANVAS SUB MENU
+		.right-submenu					{
+			.back							{
+				> a:after						{
+												content: $evo-off-canvas-menu-right-back-icon;
+												margin-left: $evo-off-canvas-menu-right-back-icon-margin-left;
+												}
+											}
+										}
+
+									}
+
+// OFF-CANVAS IE9 FIXES
+.ie9								{
+
+	// IE9 does not understand 3d transforms so you have to use 2d transforms,
+	// uses modernizr css capablity classes injected in html tag as hooks for hack
+	&.csstransforms.no-csstransforms3d
+										{
+		.left-off-canvas-menu 				{@include translate(-100%, 0);}
+		.right-off-canvas-menu 				{@include translate(100%, 0);}
+
+		.move-left > .inner-wrap 			{@include translate(-($off-canvas-width),0);}
+		.move-right > .inner-wrap 			{@include translate($off-canvas-width,0);}
+
+		.left-submenu 						{
+											@include translate(-100%,0);
+			&.move-right,
+			&.offcanvas-overlap-right,
+			&.offcanvas-overlap 				{@include translate(0%,0);}
+											}
+
+		.right-submenu 						{
+											@include translate(100%,0);
+			&.move-left,
+			&.offcanvas-overlap-left,
+			&.offcanvas-overlap 				{@include translate(0%,0);}
+											}
+										}
+
+									}
+
+}// endif

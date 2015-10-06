@@ -1,0 +1,37 @@
+//-------------------------------------------------------------------------------------------
+// Project Name - Icons Partial
+// DATE - 
+// AUTHOR - 
+//-------------------------------------------------------------------------------------------
+
+// ==========================================================================================
+// ICONS
+// ==========================================================================================
+
+@if $use-icon-font-site == true {
+
+	// ICON FONT
+	// ------------------------------------------------------------------------------------------
+	@include font-face($evo-icon-site-font-family, $evo-icon-site-font-file-path);
+
+
+	// ICONS
+	// ------------------------------------------------------------------------------------------
+
+	// ICON FONT - SITE SET - FONT STACK
+	[class^="evo-icon-site-"]		{font-family: $evo-icon-site-font-stack;}
+
+	// ICON FONT - SITE SET - ICON CLASSES
+	.evo-icon-site-google-plus2:before {content: "\eee5";}
+	.evo-icon-site-facebook2:before {content: "\eee9";}
+	.evo-icon-site-twitter:before {content: "\eeed";}
+	.evo-icon-site-apple2:before {content: "\ef1b";}
+	.evo-icon-site-android:before {content: "\ef1d";}
+	.evo-icon-site-windows8:before {content: "\ef1f";}
+	.evo-icon-site-linkedin:before {content: "\ef24";}
+	.evo-icon-site-chrome:before {content: "\ef41";}
+	.evo-icon-site-firefox:before {content: "\ef42";}
+	.evo-icon-site-IE:before {content: "\ef43";}
+	.evo-icon-site-safari:before {content: "\ef45";}
+
+}//endif

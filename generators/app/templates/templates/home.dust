@@ -1,0 +1,19 @@
+﻿{>"templates/layouts/layout.html"/}
+{site_title}
+{<content}
+
+	<div class="small-12 columns">
+
+		<h1>{#title}{home}{/title}</h1>
+		
+		<p>This boilerplate template is for the project homepage.</p>
+
+		<p>{lorem_ipsum}</p>
+		<p>{lorem_ipsum}</p>
+		<p>{lorem_ipsum}</p>
+		<p>{lorem_ipsum}</p>
+		<p>{lorem_ipsum}</p>
+
+	</div>
+
+{/content}

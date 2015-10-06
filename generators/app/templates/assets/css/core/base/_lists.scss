@@ -1,0 +1,94 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Base Lists Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-inline-list-pipe-border-color: $onyx-dark-30 !default;
+$evo-inline-dl-list-dt-margin-right: rem-calc(10) !default;
+$evo-inline-dl-list-dd-margin-right: rem-calc(10) !default;
+$evo-definition-list-hdr-color: $black !default;
+$evo-definition-list-hdr-border-color: $onyx-dark-30 !default;
+
+
+@if $use-lists == true{
+
+	// INLINE LIST
+	.evo-inline-list						{
+		& > li									{
+			&:first-child							{margin-left: 0;}
+												}
+											}
+
+	// INLINE LIST WITH PIPES
+	.evo-inline-list-pipes					{
+		& > li,
+		& > dd									{
+												border-right: 1px solid $evo-inline-list-pipe-border-color;
+												padding-right: rem-calc(10);
+			&:last-child							{
+													padding-right: 0;
+													border-right: 0;
+													}
+												}
+											}
+
+	// INLINE DEFINITION LIST
+	.evo-inline-dl-list						{
+											@include clearfix;
+		dt										{
+												float: left;
+												margin-right: $evo-inline-dl-list-dt-margin-right;
+												margin-bottom: 0;
+												}
+		& > dd									{
+												list-style: none;
+												display: block;
+												float: left;
+												margin-right: $evo-inline-dl-list-dd-margin-right;
+												margin-bottom: 0;
+			&:last-child							{margin-right: 0;}
+												}
+											}
+
+	// DATA LISTS
+	.evo-data-list							{
+											list-style: none;
+											margin-left: 0;
+		dt										{
+												margin-bottom: rem-calc(10);
+												padding-bottom: rem-calc(4);
+												color: $evo-definition-list-hdr-color;
+												border-bottom: 1px solid $evo-definition-list-hdr-border-color;
+												}
+		dd, li									{
+												margin-bottom: rem-calc(3);
+			.evo-data-list-label					{font-family: $evo-font-medium-stack;}
+												}
+											}
+
+	.evo-data-list-stacked					{
+		dd, li									{
+			span									{
+													display: block;
+													}
+												}
+											}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			
+
+		}
+		
+	}// endif
+
+}// endif

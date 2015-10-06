@@ -1,0 +1,62 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Base Box Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+
+// CORE BOX
+$evo-box-hdr-rule-size: rem-calc(3) !default;
+$evo-box-hdr-rule-style: solid !default;
+$evo-box-hdr-rule-color: $onyx-dark-50 !default;
+$evo-box-hdr-rule-padding: 0 0 rem-calc(6) 0 !default;
+$evo-box-border-width: 1px !default;
+$evo-box-border-style: solid !default;
+$evo-box-border-color: $onyx-dark-30 !default;
+$evo-box-body-text-align: left !default;
+
+// CORE BOX SHADOW
+$evo-box-shadow-vertical: 0 !default;
+$evo-box-shadow-horizontal: rem-calc(3) !default;
+$evo-box-shadow-blur: rem-calc(6) !default;
+$evo-box-shadow-color: $onyx-dark-30 !default;
+
+
+@if $use-boxes == true{
+
+	// CORE BOX
+	.evo-box					{
+								@include border-radius(rem-calc($global-radius));
+								border: $evo-box-border-width $evo-box-border-style $evo-box-border-color;
+								position: relative;
+								text-align: $evo-box-body-text-align;
+		.evo-box-hdr				{margin-bottom: rem-calc(12);}
+		.evo-hdr-rule				{
+									border-bottom: $evo-box-hdr-rule-size $evo-box-hdr-rule-style $evo-box-hdr-rule-color;
+									padding: $evo-box-hdr-rule-padding;
+									}
+		.evo-box-bdy,
+		.evo-box-ftr				{padding-bottom: rem-calc(1);}
+		.evo-box-ftr				{margin-top: rem-calc(14);}
+								}
+
+	// CORE BOX SHADOW
+	.evo-box-shadow				{@include box-shadow($evo-box-shadow-vertical, $evo-box-shadow-horizontal, $evo-box-shadow-blur, $evo-box-shadow-color);}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+			
+			
+
+		}
+		
+	}// endif
+
+}//endif

@@ -1,0 +1,136 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Core v3.0 - Carousel Partial
+// DATE - June 3, 2015
+// AUTHOR - Doug Fraize, Matthew Holmes
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-carousel-controls-margin-top: rem-calc(13) !default;
+$evo-carousel-controls-text-align: center !default;
+$evo-carousel-controls-height: rem-calc(22) !default;
+$evo-carousel-page-circle-bgcolor: $onyx-dark-10 !default;
+$evo-carousel-page-circle-bgcolor-hover: $onyx-dark-70 !default;
+$evo-carousel-page-circle-bgcolor-active: $onyx-dark-80 !default;
+$evo-carousel-page-circle-border-radius: rem-calc(20) !default;
+$evo-carousel-page-circle-width: rem-calc(12) !default;
+$evo-carousel-page-circle-height: rem-calc(12) !default;
+$evo-carousel-page-circle-margin: rem-calc(5) !default;
+$evo-carousel-page-circle-numbers-border-radius: rem-calc(30) !default;
+$evo-carousel-page-circle-numbers-text-color: $white !default;
+$evo-carousel-page-circle-numbers-padding: rem-calc(2 10) !default;
+$evo-carousel-page-circle-numbers-font-size: rem-calc(12) !default;
+$evo-carousel-nav-padding: rem-calc(1 0 2 0) !default;
+$evo-carousel-nav-position-top: -28px !default;
+$evo-carousel-nav-icon-position-top: -1px !default;
+$evo-carousel-nav-icon-color: $onyx-dark-30 !default;
+$evo-carousel-nav-icon-color-hover: $onyx-dark-70 !default;
+
+
+@if $use-carousel == true{
+
+	// CAROUSEL
+	.evo-carousel				{
+								display: none;
+								position: relative;
+								margin-bottom: $evo-base-margin;
+								width: 100%;
+								-ms-touch-action: pan-y;
+		.owl-wrapper-outer			{
+									overflow: hidden;
+									position: relative;
+									width: 100%;
+			&.autoHeight				{@include transition(height 500ms ease-in-out);}
+			.owl-wrapper				{
+										@include clearfix;
+										@include backface-visibility(hidden);
+										@include transform(translate3d(0,0,0));
+										display: none;
+										position: relative;
+										-webkit-transform: translate3d(0px, 0px, 0px);
+				.owl-item					{
+											@include backface-visibility(hidden);
+											@include transform(translate3d(0,0,0));
+											float: left;
+					img							{
+												display: block;
+	    										width: 100%;
+												}
+					&.loading					{
+												min-height: rem-calc(150);
+												background: url(../images/core/loading_animations/loading_animation_bar.gif) no-repeat center center;
+												}
+											}
+										}
+			.grabbing					{cursor: move;}
+									}
+		.owl-controls				{
+									@include user-select(none);
+									margin-top: $evo-carousel-controls-margin-top;
+									text-align: $evo-carousel-controls-text-align;
+									height: $evo-carousel-controls-height;
+									overflow: hidden;
+									-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			&.clickable					{
+				.owl-buttons div:hover		{text-decoration: none;}
+				.owl-page:hover span		{background: $evo-carousel-page-circle-bgcolor-hover;}
+				.owl-page.active:hover span	{background: $evo-carousel-page-circle-bgcolor-active;}
+										}
+			.owl-page,
+			.owl-buttons div			{cursor: pointer;}
+			.owl-page					{
+										display: inline-block;
+				&.active					{
+					span						{background: $evo-carousel-page-circle-bgcolor-active;}
+											}
+				span						{
+											@include border-radius($evo-carousel-page-circle-border-radius);
+											display: block;
+											width: $evo-carousel-page-circle-width;
+											height: $evo-carousel-page-circle-height;
+											margin: $evo-carousel-page-circle-margin;
+											background: $evo-carousel-page-circle-bgcolor;
+					&.owl-numbers				{
+												@include border-radius($evo-carousel-page-circle-numbers-border-radius);
+												height: auto;
+												width: auto;
+												color: $evo-carousel-page-circle-numbers-text-color;
+												padding: $evo-carousel-page-circle-numbers-padding;
+												font-size: $evo-carousel-page-circle-numbers-font-size;
+												}
+											}
+										}
+			.owl-buttons				{
+				.owl-next,
+				.owl-prev					{
+											height: $evo-carousel-controls-height;
+											padding: $evo-carousel-nav-padding;
+											position: relative;
+											top: $evo-carousel-nav-position-top;
+					[class*="evo-icon"]			{
+												top: $evo-carousel-nav-icon-position-top;
+												color: $evo-carousel-nav-icon-color;
+						&:hover						{color: $evo-carousel-nav-icon-color-hover;}
+												}
+											}
+				.owl-prev					{float: left;}
+				.owl-next					{float: right;}
+										}
+									}
+								}
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// MEDIUM MEDIA QUERY RANGE AND UP - 768px +
+	@if $use-medium-up-mediaquery == true {
+		
+		@media #{$medium-up} {
+
+			
+
+		}
+
+	}// endif
+
+}//endif
